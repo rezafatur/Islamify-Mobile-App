@@ -2,21 +2,31 @@ name: islamify
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=3.0.6 <4.0.0'
+environment:
+  sdk: ">=3.0.6 <4.0.0"
 
-dependencies: 
+dependencies:
   cupertino_icons: ^1.0.2
   get_cli: ^1.8.1
   get: 4.6.5
-  flutter: 
+  flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.1
+  auto_size_text: ^3.0.0
+  shared_preferences: ^2.2.0
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^2.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
+flutter:
+  assets:
+    - assets/images/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.ttf
+        - asset: fonts/Montserrat-Bold.ttf
+          weight: 700
   uses-material-design: true
-
