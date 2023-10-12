@@ -22,10 +22,10 @@ class OnboardingView extends GetView<OnboardingController> {
           Radius.circular(10),
         ),
         color: controller.currentPage == index
-            ? jasperOrange
-            : isDarkMode
-                ? Colors.white
-                : darkVanilla,
+            ? isDarkMode
+                ? azureishWhite
+                : msuGreen
+            : opal,
       ),
       margin: const EdgeInsets.symmetric(
         horizontal: 5,
@@ -45,7 +45,7 @@ class OnboardingView extends GetView<OnboardingController> {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     // Set the background color based on the theme mode
-    Color bgColor = isDarkMode ? Colors.black : Colors.white;
+    Color bgColor = isDarkMode ? Colors.black : azureishWhite;
 
     return Scaffold(
       body: SafeArea(
@@ -70,9 +70,16 @@ class OnboardingView extends GetView<OnboardingController> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: jasperOrange,
+                              color: isDarkMode ? azureishWhite : msuGreen,
                               width: 5,
                             ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                offset: Offset.zero,
+                                blurRadius: isDarkMode ? 0 : 10,
+                              ),
+                            ],
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
@@ -89,7 +96,8 @@ class OnboardingView extends GetView<OnboardingController> {
                         // Section - Title
                         AutoSizeText(
                           content.title,
-                          style: isDarkMode ? whiteBold32 : blackBold32,
+                          style:
+                              isDarkMode ? azureishWhiteBold32 : msuGreenBold32,
                           textAlign: TextAlign.center,
                           maxLines: 1,
                         ),
@@ -143,7 +151,8 @@ class OnboardingView extends GetView<OnboardingController> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: jasperOrange,
+                                backgroundColor:
+                                    isDarkMode ? azureishWhite : msuGreen,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50),
                                 ),
@@ -153,7 +162,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                 ),
                               ),
                               child: AutoSizeText(
-                                "Get Started",
+                                "Mulai Sekarang",
                                 style: isDarkMode ? blackBold16 : whiteBold16,
                                 maxLines: 1,
                               ),
@@ -171,7 +180,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                     controller.pageController.jumpToPage(3);
                                   },
                                   child: AutoSizeText(
-                                    "Skip",
+                                    "Lewati",
                                     style:
                                         isDarkMode ? whiteBold16 : blackBold16,
                                     maxLines: 1,
@@ -182,7 +191,8 @@ class OnboardingView extends GetView<OnboardingController> {
                                 ElevatedButton(
                                   onPressed: controller.nextPage,
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: jasperOrange,
+                                    backgroundColor:
+                                        isDarkMode ? azureishWhite : msuGreen,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50),
                                     ),
@@ -193,7 +203,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                     ),
                                   ),
                                   child: AutoSizeText(
-                                    "Next",
+                                    "Selanjutnya",
                                     style:
                                         isDarkMode ? blackBold16 : whiteBold16,
                                     maxLines: 1,

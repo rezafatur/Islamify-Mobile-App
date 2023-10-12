@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-const Color jasperOrange = Color(0xFFD99A4E);
-const Color darkVanilla = Color(0xFFD9C8B4);
-const Color blastOffBronze = Color(0xFFA67360);
-const Color blackBean = Color(0xFF400601);
-const Color antiFlashWhite = Color(0xFFF2F2F2);
+const Color azureishWhite = Color(0xFFD2E9E9);
+const Color msuGreen = Color(0xFF183D3D);
+const Color opal = Color(0xFFADC5BB);
