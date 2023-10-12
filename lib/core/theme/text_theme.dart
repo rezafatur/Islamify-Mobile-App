@@ -17,11 +17,33 @@ const whiteBold16 = TextStyle(
 );
 
 // Text with Black Color (Large, Medium, and Small)
+const blackW30012 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
+);
+
+const blackW30012italic = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
+  fontStyle: FontStyle.italic,
+);
+
 const blackW30016 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
   fontSize: 16,
   fontWeight: FontWeight.w300,
+);
+
+const blackBold12 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
 );
 
 const blackBold16 = TextStyle(
@@ -45,4 +67,12 @@ const msuGreenBold32 = TextStyle(
   fontFamily: "Montserrat",
   fontSize: 32,
   fontWeight: FontWeight.bold,
+);
+
+// Text with picton blue color (large, medium, and small)
+const pictonBlueW30012 = TextStyle(
+  color: pictonBlue,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
 );

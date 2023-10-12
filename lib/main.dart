@@ -24,7 +24,7 @@ void main() async {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      initialRoute: isOnboardingCompleted ? Routes.HOME : Routes.ONBOARDING,
+      initialRoute: isOnboardingCompleted ? Routes.LOGIN : Routes.ONBOARDING,
       getPages: AppPages.routes,
     ),
   );

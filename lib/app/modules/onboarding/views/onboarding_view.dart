@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:islamify/app/data/models/onboarding_data.dart';
-import 'package:islamify/app/modules/home/views/home_view.dart';
+import 'package:islamify/app/modules/login/views/login_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import 'package:islamify/core/utils/size_configs.dart';
@@ -147,7 +147,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               onPressed: () {
                                 controller.completeOnboarding();
                                 Get.offAll(
-                                  const HomeView(),
+                                  LoginView(),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
