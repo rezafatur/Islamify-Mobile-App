@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:islamify/app/modules/register/views/register_view.dart';
 import 'package:islamify/app/routes/app_pages.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -19,9 +20,6 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    // Determine the current theme mode (light or dark)
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       backgroundColor: blackGray,
       extendBodyBehindAppBar: true,
@@ -53,7 +51,7 @@ class LoginView extends GetView<LoginController> {
                             0.25,
                           ),
                           offset: Offset.zero,
-                          blurRadius: isDarkMode ? 0 : 10,
+                          blurRadius: 10,
                         ),
                       ],
                       color: azureishWhite,
@@ -99,7 +97,7 @@ class LoginView extends GetView<LoginController> {
                                     0.25,
                                   ),
                                   offset: Offset.zero,
-                                  blurRadius: isDarkMode ? 0 : 10,
+                                  blurRadius: 10,
                                 ),
                               ],
                               color: blackGray,
@@ -113,14 +111,12 @@ class LoginView extends GetView<LoginController> {
                                   // Section - header
                                   RichText(
                                     textAlign: TextAlign.center,
-                                    text: TextSpan(
+                                    text: const TextSpan(
                                       text: "Selamat datang",
-                                      style: isDarkMode
-                                          ? whiteBold16
-                                          : blackBold16,
-                                      children: const <TextSpan>[
+                                      style: blackBold16,
+                                      children: <TextSpan>[
                                         TextSpan(
-                                          text: "\nMasuk ke akun Anda",
+                                          text: "\nMasuk ke akun Murid",
                                         )
                                       ],
                                     ),
@@ -144,7 +140,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                     ),
@@ -191,7 +187,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                     ),
@@ -252,7 +248,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                       color: columbiaBlue,
@@ -290,11 +286,15 @@ class LoginView extends GetView<LoginController> {
                                       ),
                                       TextButton(
                                         onPressed: () {
-                                          Routes.HOME;
+                                          Get.to(
+                                            () => RegisterView(
+                                              roleAccount: "Murid",
+                                            ),
+                                          );
                                         },
                                         child: const Text(
                                           "Daftar",
-                                          style: pictonBlueW30012,
+                                          style: pictonBlueBold12,
                                         ),
                                       ),
                                     ],
@@ -322,7 +322,7 @@ class LoginView extends GetView<LoginController> {
                                     0.25,
                                   ),
                                   offset: Offset.zero,
-                                  blurRadius: isDarkMode ? 0 : 5,
+                                  blurRadius: 5,
                                 ),
                               ],
                               color: azureishWhite,
@@ -387,7 +387,7 @@ class LoginView extends GetView<LoginController> {
                             0.25,
                           ),
                           offset: Offset.zero,
-                          blurRadius: isDarkMode ? 0 : 10,
+                          blurRadius: 10,
                         ),
                       ],
                       color: azureishWhite,
@@ -433,7 +433,7 @@ class LoginView extends GetView<LoginController> {
                                     0.25,
                                   ),
                                   offset: Offset.zero,
-                                  blurRadius: isDarkMode ? 0 : 10,
+                                  blurRadius: 10,
                                 ),
                               ],
                               color: blackGray,
@@ -447,14 +447,12 @@ class LoginView extends GetView<LoginController> {
                                   // Section - header
                                   RichText(
                                     textAlign: TextAlign.center,
-                                    text: TextSpan(
+                                    text: const TextSpan(
                                       text: "Selamat datang",
-                                      style: isDarkMode
-                                          ? whiteBold16
-                                          : blackBold16,
-                                      children: const <TextSpan>[
+                                      style: blackBold16,
+                                      children: <TextSpan>[
                                         TextSpan(
-                                          text: "\nMasuk ke akun Anda",
+                                          text: "\nMasuk ke akun Guru",
                                         )
                                       ],
                                     ),
@@ -478,7 +476,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                     ),
@@ -525,7 +523,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                     ),
@@ -586,7 +584,7 @@ class LoginView extends GetView<LoginController> {
                                             0.25,
                                           ),
                                           offset: Offset.zero,
-                                          blurRadius: isDarkMode ? 0 : 5,
+                                          blurRadius: 5,
                                         ),
                                       ],
                                       color: columbiaBlue,
@@ -624,11 +622,15 @@ class LoginView extends GetView<LoginController> {
                                       ),
                                       TextButton(
                                         onPressed: () {
-                                          Routes.HOME;
+                                          Get.to(
+                                            () => RegisterView(
+                                              roleAccount: "Guru",
+                                            ),
+                                          );
                                         },
                                         child: const Text(
                                           "Daftar",
-                                          style: pictonBlueW30012,
+                                          style: pictonBlueBold12,
                                         ),
                                       ),
                                     ],
@@ -641,7 +643,7 @@ class LoginView extends GetView<LoginController> {
                             height: 20,
                           ),
 
-                          // Section - teacher login button
+                          // Section - student login button
                           Container(
                             width: MediaQuery.of(context).size.width / 2,
                             decoration: BoxDecoration(
@@ -656,7 +658,7 @@ class LoginView extends GetView<LoginController> {
                                     0.25,
                                   ),
                                   offset: Offset.zero,
-                                  blurRadius: isDarkMode ? 0 : 5,
+                                  blurRadius: 5,
                                 ),
                               ],
                               color: azureishWhite,

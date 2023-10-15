@@ -70,9 +70,9 @@ const msuGreenBold32 = TextStyle(
 );
 
 // Text with picton blue color (large, medium, and small)
-const pictonBlueW30012 = TextStyle(
+const pictonBlueBold12 = TextStyle(
   color: pictonBlue,
   fontFamily: "Montserrat",
   fontSize: 12,
-  fontWeight: FontWeight.w300,
+  fontWeight: FontWeight.bold,
 );
