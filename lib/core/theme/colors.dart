@@ -6,3 +6,4 @@ const Color columbiaBlue = Color(0xFFC4DFDF);
 const Color msuGreen = Color(0xFF183D3D);
 const Color opal = Color(0xFFADC5BB);
 const Color pictonBlue = Color(0xFF4EA0EB);
+const Color wintergreenDream = Color(0xFF5C8374);

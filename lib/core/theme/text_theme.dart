@@ -17,6 +17,13 @@ const whiteBold16 = TextStyle(
 );
 
 // Text with Black Color (Large, Medium, and Small)
+const blackW30010 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 10,
+  fontWeight: FontWeight.w300,
+);
+
 const blackW30012 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
@@ -37,6 +44,13 @@ const blackW30016 = TextStyle(
   fontFamily: "Montserrat",
   fontSize: 16,
   fontWeight: FontWeight.w300,
+);
+
+const blackBold10 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 10,
+  fontWeight: FontWeight.bold,
 );
 
 const blackBold12 = TextStyle(
@@ -62,6 +76,13 @@ const azureishWhiteBold32 = TextStyle(
 );
 
 // Text with msu green color (large, medium, and small)
+const msuGreenBold12 = TextStyle(
+  color: msuGreen,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+);
+
 const msuGreenBold32 = TextStyle(
   color: msuGreen,
   fontFamily: "Montserrat",
