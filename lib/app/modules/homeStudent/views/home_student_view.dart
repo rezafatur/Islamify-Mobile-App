@@ -2,11 +2,12 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islamify/app/data/models/advertising_data.dart';
 import 'package:islamify/app/data/models/juz_data.dart';
+import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import '../../../../core/theme/colors.dart';
 import '../controllers/home_student_controller.dart';
 
 class HomeStudentView extends GetView<HomeStudentController> {
@@ -325,8 +326,6 @@ class HomeStudentView extends GetView<HomeStudentController> {
                                         horizontal: 10,
                                       ),
                                       child: LinearPercentIndicator(
-                                        animation: true,
-                                        animationDuration: 2000,
                                         backgroundColor:
                                             Colors.grey.withOpacity(0.3),
                                         barRadius: const Radius.circular(5),
@@ -356,6 +355,25 @@ class HomeStudentView extends GetView<HomeStudentController> {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+                // section - ad banner
+                if (controller.bannerAd != null)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SizedBox(
+                        width: controller.bannerAd!.size.width.toDouble(),
+                        height: controller.bannerAd!.size.height.toDouble(),
+                        child: AdWidget(ad: controller.bannerAd!),
+                      ),
+                    ),
+                  ),
                 const SizedBox(
                   height: 20,
                 ),
