@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:islamify/app/controller/page_index_student.dart';
 import 'package:islamify/app/data/models/advertising_data.dart';
 import 'package:islamify/app/data/models/juz_data.dart';
 import 'package:islamify/core/theme/colors.dart';
@@ -18,7 +19,12 @@ class HomeStudentView extends GetView<HomeStudentController> {
     HomeStudentController(),
   );
 
-  // Dots Indicator
+  // page controller untuk homeStudent, scheduleStudent, and profileStudent
+  final pageStudent = Get.put<PageIndexStudentController>(
+    PageIndexStudentController(),
+  );
+
+  // dots indicator
   AnimatedContainer dotsIndicator({int? index}) {
     return AnimatedContainer(
       duration: const Duration(
@@ -541,6 +547,8 @@ class HomeStudentView extends GetView<HomeStudentController> {
             ),
           ),
         ],
+        initialActiveIndex: pageStudent.pageIndex.value,
+        onTap: (int i) => pageStudent.changePage(i),
       ),
     );
   }

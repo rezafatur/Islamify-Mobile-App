@@ -1,12 +1,17 @@
 import 'package:get/get.dart';
+
 import '../modules/homeStudent/bindings/home_student_binding.dart';
 import '../modules/homeStudent/views/home_student_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/profileStudent/bindings/profile_student_binding.dart';
+import '../modules/profileStudent/views/profile_student_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/scheduleStudent/bindings/schedule_student_binding.dart';
+import '../modules/scheduleStudent/views/schedule_student_view.dart';
 
 part 'app_routes.dart';
 
@@ -37,6 +42,19 @@ class AppPages {
       name: _Paths.HOME_STUDENT,
       page: () => HomeStudentView(),
       binding: HomeStudentBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: _Paths.SCHEDULE_STUDENT,
+      page: () => ScheduleStudentView(),
+      binding: ScheduleStudentBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: _Paths.PROFILE_STUDENT,
+      page: () => ProfileStudentView(),
+      binding: ProfileStudentBinding(),
+      transition: Transition.fadeIn,
     ),
   ];
 }
