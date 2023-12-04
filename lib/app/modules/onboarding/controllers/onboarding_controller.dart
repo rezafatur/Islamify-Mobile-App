@@ -10,7 +10,7 @@ class OnboardingController extends GetxController {
     contents.addAll(onboardingContents);
   }
 
-  List<Onboarding> get contentsO => contents;
+  List<Onboarding> get contentsOnboarding => contents;
 
   final _currentPage = 0.obs;
   int get currentPage => _currentPage.value;

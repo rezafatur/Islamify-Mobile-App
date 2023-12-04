@@ -12,27 +12,27 @@ class Onboarding {
 
 List<Onboarding> onboardingContents = [
   Onboarding(
-    title: "Assalamu'alaikum",
+    title: "Assalamualaikum",
     description:
-        "Selamat datang di Islamify, tempat Anda belajar dan memahami Al-Qur'an. Mari mulai perjalanan keagamaan Anda bersama kami! ",
+        "Selamat datang di Islamify, tempat Anda belajar dan memahami Al-Qur'an. Mari mulai proses pembelajaran Anda bersama Islamify!",
     image: "assets/images/onboarding1.png",
   ),
   Onboarding(
     title: "Edukasi",
     description:
-        "Di sini, Anda akan mempelajari tajwid dan harakat dengan cara yang interaktif dan mudah dimengerti. Modul-modul khusus akan membimbing Anda dalam membaca Al-Qur'an dengan benar.",
+        "Disini, Anda akan mempelajari huruf hijaiyah, tajwid, dan harakat dengan cara yang interaktif dan mudah dimengerti. Modul-modul khusus akan membimbing Anda dalam membaca Al-Qur'an dengan benar.",
     image: "assets/images/onboarding2.png",
   ),
   Onboarding(
-    title: "Bimbingan",
+    title: "Digital",
     description:
-        "Dengan fitur bimbingan, Anda dapat memilih Ustadz atau Ustadzah sesuai dengan preferensi Anda. Pembimbing akan membantu Anda dengan penjelasan mendalam tentang Al-Qur'an dan agama Islam.",
+        "Selain fitur edukasi, Anda dapat membaca Al-Qur'an secara digital atau langsung dari aplikasi Islamify.",
     image: "assets/images/onboarding3.png",
   ),
   Onboarding(
     title: "Mulai",
     description:
-        "Selamat! Anda siap untuk memulai perjalanan keagamaan Anda bersama Islamify. Ayo mulai membaca Al-Qur'an, pelajari tajwid, dan dapatkan bimbingan langsung.",
+        "Selamat! Anda siap untuk memulai pembelajaran Anda bersama Islamify. Ayo mulai membaca Al-Qur'an secara digital, pelajari huruf hijayah, tajwid, dan harakat secara interaktif melalui aplikasi Islamify. ",
     image: "assets/images/onboarding4.png",
   ),
 ];

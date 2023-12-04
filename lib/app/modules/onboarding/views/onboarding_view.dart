@@ -11,7 +11,7 @@ import '../controllers/onboarding_controller.dart';
 class OnboardingView extends GetView<OnboardingController> {
   const OnboardingView({Key? key}) : super(key: key);
 
-  // Dots Indicator
+  // dots Indicator
   AnimatedContainer dotsIndicator({int? index, required bool isDarkMode}) {
     return AnimatedContainer(
       duration: const Duration(
@@ -24,7 +24,7 @@ class OnboardingView extends GetView<OnboardingController> {
         color: controller.currentPage == index
             ? isDarkMode
                 ? azureishWhite
-                : msuGreen
+                : wintergreenDream
             : opal,
       ),
       margin: const EdgeInsets.symmetric(
@@ -38,51 +38,47 @@ class OnboardingView extends GetView<OnboardingController> {
 
   @override
   Widget build(BuildContext context) {
-    // Initializing the screen width and height
+    // initializing the screen width and height
     SizeConfig().init(context);
 
-    // Determine the current theme mode (light or dark)
+    // determine the current theme mode (light or dark)
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     // Set the background color based on the theme mode
-    Color bgColor = isDarkMode ? Colors.black : azureishWhite;
+    Color bgColor = isDarkMode ? richBlack : cultured;
 
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            // Section image, title, and description
+            // section - image, title, and description
             Expanded(
               flex: 5,
               child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
                 controller: controller.pageController,
                 onPageChanged: controller.onPageChanged,
-                itemCount: controller.contentsO.length,
+                itemCount: controller.contentsOnboarding.length,
                 itemBuilder: (context, i) {
-                  Onboarding content = controller.contentsO[i];
+                  Onboarding content = controller.contentsOnboarding[i];
                   return Padding(
                     padding: const EdgeInsets.all(50),
                     child: Column(
                       children: [
-                        // Section - Image
+                        // section - image
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: isDarkMode ? azureishWhite : msuGreen,
-                              width: 5,
-                            ),
+                            borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black,
                                 offset: Offset.zero,
-                                blurRadius: isDarkMode ? 0 : 10,
+                                blurRadius: isDarkMode ? 0 : 5,
                               ),
                             ],
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
                               content.image,
                               height: SizeConfig.blockV! * 35,
@@ -93,11 +89,12 @@ class OnboardingView extends GetView<OnboardingController> {
                           height: 20,
                         ),
 
-                        // Section - Title
+                        // section - title
                         AutoSizeText(
                           content.title,
-                          style:
-                              isDarkMode ? azureishWhiteBold32 : msuGreenBold32,
+                          style: isDarkMode
+                              ? azureishWhiteBold32
+                              : winterDreamBold32,
                           textAlign: TextAlign.center,
                           maxLines: 1,
                         ),
@@ -105,10 +102,10 @@ class OnboardingView extends GetView<OnboardingController> {
                           height: 20,
                         ),
 
-                        // Section - Description
+                        // section - description
                         AutoSizeText(
                           content.description,
-                          style: isDarkMode ? whiteW30016 : blackW30016,
+                          style: isDarkMode ? whiteW30016 : richBlackW30016,
                           textAlign: TextAlign.center,
                           maxLines: 10,
                         ),
@@ -119,18 +116,18 @@ class OnboardingView extends GetView<OnboardingController> {
               ),
             ),
 
-            // Section skip, next, and get started button
+            // section - skip, next, and get started button
             Expanded(
               flex: 1,
               child: Obx(
                 () => Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Section - Dots Indicator
+                    // section - dots indicator
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        controller.contentsO.length,
+                        controller.contentsOnboarding.length,
                         (int index) => dotsIndicator(
                           index: index,
                           isDarkMode: isDarkMode,
@@ -138,9 +135,10 @@ class OnboardingView extends GetView<OnboardingController> {
                       ),
                     ),
 
-                    // Section - Buttons
-                    controller.currentPage + 1 == controller.contentsO.length
-                        ? // Section - Get Started button
+                    // section - buttons
+                    controller.currentPage + 1 ==
+                            controller.contentsOnboarding.length
+                        ? // section - get started button
                         Padding(
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
@@ -151,8 +149,9 @@ class OnboardingView extends GetView<OnboardingController> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor:
-                                    isDarkMode ? azureishWhite : msuGreen,
+                                backgroundColor: isDarkMode
+                                    ? azureishWhite
+                                    : wintergreenDream,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50),
                                 ),
@@ -168,13 +167,13 @@ class OnboardingView extends GetView<OnboardingController> {
                               ),
                             ),
                           )
-                        : // Section - Skip and Next button
+                        : // section - skip and next button
                         Padding(
                             padding: const EdgeInsets.all(30),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                // Section - Skip button
+                                // section - skip button
                                 TextButton(
                                   onPressed: () {
                                     controller.pageController.jumpToPage(3);
@@ -187,12 +186,13 @@ class OnboardingView extends GetView<OnboardingController> {
                                   ),
                                 ),
 
-                                // Section - Next button
+                                // section - next button
                                 ElevatedButton(
                                   onPressed: controller.nextPage,
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor:
-                                        isDarkMode ? azureishWhite : msuGreen,
+                                    backgroundColor: isDarkMode
+                                        ? azureishWhite
+                                        : wintergreenDream,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50),
                                     ),
