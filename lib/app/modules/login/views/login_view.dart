@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:islamify/app/modules/homeStudent/views/home_student_view.dart';
+import 'package:islamify/app/modules/home/views/home_view.dart';
 import 'package:islamify/app/modules/register/views/register_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -247,7 +247,7 @@ class LoginView extends GetView<LoginController> {
                                 child: InkWell(
                                   onTap: () {
                                     Get.to(
-                                      () => HomeStudentView(),
+                                      () => HomeView(),
                                     );
                                   },
                                   child: const AutoSizeText(

@@ -46,6 +46,13 @@ const blackW30016 = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const blackW30018 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 18,
+  fontWeight: FontWeight.w300,
+);
+
 const blackBold10 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
@@ -64,6 +71,13 @@ const blackBold16 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
   fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
+
+const blackBold24 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 24,
   fontWeight: FontWeight.bold,
 );
 

@@ -16,7 +16,7 @@ class PageIndexStudentController extends GetxController {
         break;
       default:
         pageIndex.value = i;
-        Get.offAllNamed(Routes.HOME_STUDENT);
+        Get.offAllNamed(Routes.HOME);
     }
   }
 }

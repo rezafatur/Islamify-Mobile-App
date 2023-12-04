@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
-
-import '../modules/homeStudent/bindings/home_student_binding.dart';
-import '../modules/homeStudent/views/home_student_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -18,7 +17,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME_STUDENT;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
@@ -37,9 +36,9 @@ class AppPages {
       binding: RegisterBinding(),
     ),
     GetPage(
-      name: _Paths.HOME_STUDENT,
-      page: () => HomeStudentView(),
-      binding: HomeStudentBinding(),
+      name: _Paths.HOME,
+      page: () => HomeView(),
+      binding: HomeBinding(),
       transition: Transition.fadeIn,
     ),
     GetPage(
