@@ -33,9 +33,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.REGISTER,
-      page: () => RegisterView(
-        roleAccount: "ROLE_ACCOUNT",
-      ),
+      page: () => RegisterView(),
       binding: RegisterBinding(),
     ),
     GetPage(
