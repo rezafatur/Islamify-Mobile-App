@@ -19,7 +19,6 @@ class RegisterView extends GetView<RegisterController> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-  final TextEditingController cardIdentityController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

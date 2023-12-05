@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+
+import '../modules/editProfile/bindings/edit_profile_binding.dart';
+import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -52,6 +55,11 @@ class AppPages {
       page: () => ProfileView(),
       binding: ProfileBinding(),
       transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: _Paths.EDIT_PROFILE,
+      page: () => EditProfileView(),
+      binding: EditProfileBinding(),
     ),
   ];
 }

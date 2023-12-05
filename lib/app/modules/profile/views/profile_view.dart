@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:islamify/app/controller/page_index.dart';
+import 'package:islamify/app/modules/editProfile/views/edit_profile_view.dart';
 import 'package:islamify/app/modules/login/views/login_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -304,7 +305,11 @@ class ProfileView extends GetView<ProfileController> {
                           style: blackBold12,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(
+                              () => EditProfileView(),
+                            );
+                          },
                           child: const Text(
                             "Ubah Data",
                             style: pictonBlueBold12,

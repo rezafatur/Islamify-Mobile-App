@@ -113,6 +113,13 @@ const pictonBlueBold12 = TextStyle(
 );
 
 // Text with msu green color (large, medium, and small)
+const winterDreamBold20 = TextStyle(
+  color: wintergreenDream,
+  fontFamily: "Montserrat",
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+
 const winterDreamBold32 = TextStyle(
   color: wintergreenDream,
   fontFamily: "Montserrat",
