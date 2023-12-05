@@ -12,8 +12,8 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
-import '../modules/scheduleStudent/bindings/schedule_student_binding.dart';
-import '../modules/scheduleStudent/views/schedule_student_view.dart';
+import '../modules/allSurah/bindings/all_surah_binding.dart';
+import '../modules/allSurah/views/all_surah_view.dart';
 
 part 'app_routes.dart';
 
@@ -45,9 +45,9 @@ class AppPages {
       transition: Transition.fadeIn,
     ),
     GetPage(
-      name: _Paths.SCHEDULE_STUDENT,
-      page: () => ScheduleStudentView(),
-      binding: ScheduleStudentBinding(),
+      name: _Paths.ALL_SURAH,
+      page: () => AllSurahView(),
+      binding: AllSurahBinding(),
       transition: Transition.fadeIn,
     ),
     GetPage(

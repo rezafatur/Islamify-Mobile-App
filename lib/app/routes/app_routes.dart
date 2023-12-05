@@ -8,7 +8,7 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
   static const HOME_STUDENT = _Paths.HOME_STUDENT;
-  static const SCHEDULE_STUDENT = _Paths.SCHEDULE_STUDENT;
+  static const SCHEDULE_STUDENT = _Paths.ALL_SURAH;
   static const PROFILE = _Paths.PROFILE;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
 }
@@ -20,7 +20,7 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const REGISTER = '/register';
   static const HOME_STUDENT = '/home-student';
-  static const SCHEDULE_STUDENT = '/schedule-student';
+  static const ALL_SURAH = '/all-surah';
   static const PROFILE = '/profile';
   static const EDIT_PROFILE = '/edit-profile';
 }
