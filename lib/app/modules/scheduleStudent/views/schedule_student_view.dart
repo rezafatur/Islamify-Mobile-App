@@ -2,7 +2,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:islamify/app/controller/page_index_student.dart';
+import 'package:islamify/app/controller/page_index.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import '../controllers/schedule_student_controller.dart';
@@ -11,8 +11,8 @@ class ScheduleStudentView extends GetView<ScheduleStudentController> {
   ScheduleStudentView({Key? key}) : super(key: key);
 
   // page controller untuk homeStudent, scheduleStudent, and profileStudent
-  final pageStudent = Get.put<PageIndexStudentController>(
-    PageIndexStudentController(),
+  final pageStudent = Get.put<PageIndexController>(
+    PageIndexController(),
   );
 
   @override

@@ -8,4 +8,5 @@ const Color msuGreen = Color(0xFF183D3D);
 const Color opal = Color(0xFFADC5BB);
 const Color pictonBlue = Color(0xFF4EA0EB);
 const Color richBlack = Color(0xFF040D12);
+const Color sunsetOrange = Color(0xFFF25454);
 const Color wintergreenDream = Color(0xFF5C8374);

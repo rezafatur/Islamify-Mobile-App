@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class ProfileStudentController extends GetxController {
+class ProfileController extends GetxController {
   //TODO: Implement ProfileStudentController
 
   final count = 0.obs;

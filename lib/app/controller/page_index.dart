@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:islamify/app/routes/app_pages.dart';
 
-class PageIndexStudentController extends GetxController {
+class PageIndexController extends GetxController {
   RxInt pageIndex = 0.obs;
 
   void changePage(int i) async {
@@ -12,7 +12,7 @@ class PageIndexStudentController extends GetxController {
         break;
       case 2:
         pageIndex.value = i;
-        Get.offAllNamed(Routes.PROFILE_STUDENT);
+        Get.offAllNamed(Routes.PROFILE);
         break;
       default:
         pageIndex.value = i;

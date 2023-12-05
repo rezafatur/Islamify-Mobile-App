@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:islamify/app/controller/page_index_student.dart';
+import 'package:islamify/app/controller/page_index.dart';
 import 'package:islamify/app/data/models/learning_quran_data.dart';
 import 'package:islamify/app/modules/home/controllers/home_controller.dart';
 import 'package:islamify/core/theme/colors.dart';
@@ -18,8 +18,8 @@ class HomeView extends GetView<HomeController> {
   );
 
   // page controller for home, quran, and profile page
-  final pageStudent = Get.put<PageIndexStudentController>(
-    PageIndexStudentController(),
+  final pageStudent = Get.put<PageIndexController>(
+    PageIndexController(),
   );
 
   @override
@@ -27,18 +27,35 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: cultured,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: cultured,
         elevation: 5,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,
         ),
-        title: const Center(
+        leading: const Center(
           child: Text(
             "Islamify",
             style: winterDreamBold32,
           ),
         ),
+        leadingWidth: MediaQuery.of(context).size.width / 2.5,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 12,
+            ),
+            child: IgnorePointer(
+              child: InkWell(
+                onTap: () {},
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  scale: 10,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

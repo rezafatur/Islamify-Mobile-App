@@ -5,8 +5,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
-import '../modules/profileStudent/bindings/profile_student_binding.dart';
-import '../modules/profileStudent/views/profile_student_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/scheduleStudent/bindings/schedule_student_binding.dart';
@@ -48,9 +48,9 @@ class AppPages {
       transition: Transition.fadeIn,
     ),
     GetPage(
-      name: _Paths.PROFILE_STUDENT,
-      page: () => ProfileStudentView(),
-      binding: ProfileStudentBinding(),
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
       transition: Transition.fadeIn,
     ),
   ];
