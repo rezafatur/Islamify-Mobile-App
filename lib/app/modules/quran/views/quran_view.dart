@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:islamify/app/modules/quran/controllers/quran_controller.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -151,7 +152,7 @@ class QuranView extends GetView<QuranController> {
 
                                                   // section - place of descent and number of verses
                                                   Text(
-                                                    "${surahInfo["tempat_turun"]} • ${surahInfo["jumlah_ayat"].toString()} Ayat",
+                                                    "${surahInfo["tempat_turun"] == "mekah" ? "Makkiyah" : "Madaniyah"} • ${surahInfo["jumlah_ayat"].toString()} Ayat",
                                                     style: whiteW30012,
                                                   ),
                                                   const SizedBox(
@@ -181,33 +182,43 @@ class QuranView extends GetView<QuranController> {
                                   children: [
                                     Expanded(
                                       child: InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              color: opal,
-                                              width: 2,
+                                        onTap: () {
+                                          controller.toggleBookmark();
+                                        },
+                                        child: Obx(
+                                          () => Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color: opal,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                          ),
-                                          child: const Padding(
-                                            padding: EdgeInsets.all(20),
-                                            child: Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.bookmark_border,
-                                                  color: pictonBlue,
-                                                  size: 20,
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Text(
-                                                  "Terakhir Dibaca",
-                                                  style: blackBold12,
-                                                )
-                                              ],
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(20),
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    controller
+                                                            .isBookmarked.value
+                                                        ? Icons.bookmark
+                                                        : Icons.bookmark_border,
+                                                    color: pictonBlue,
+                                                    size: 20,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    controller
+                                                            .isBookmarked.value
+                                                        ? "Terakhir Dibaca"
+                                                        : "Tandai Dibaca",
+                                                    style: blackBold12,
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -218,33 +229,43 @@ class QuranView extends GetView<QuranController> {
                                     ),
                                     Expanded(
                                       child: InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              color: opal,
-                                              width: 2,
+                                        onTap: () {
+                                          controller.togglePlayPause(
+                                            surahInfo["audio"],
+                                          );
+                                        },
+                                        child: Obx(
+                                          () => Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color: opal,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                          ),
-                                          child: const Padding(
-                                            padding: EdgeInsets.all(20),
-                                            child: Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.play_arrow,
-                                                  color: sunsetOrange,
-                                                  size: 20,
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Text(
-                                                  "Mulai Audio",
-                                                  style: blackBold12,
-                                                )
-                                              ],
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(20),
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    controller.isPlaying.value
+                                                        ? Icons.pause
+                                                        : Icons.play_arrow,
+                                                    color: sunsetOrange,
+                                                    size: 20,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    controller.isPlaying.value
+                                                        ? "Jeda Audio"
+                                                        : "Mulai Audio",
+                                                    style: blackBold12,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -291,7 +312,12 @@ class QuranView extends GetView<QuranController> {
                                             scale: 15,
                                           ),
                                           Text(
-                                            ayat["nomor"].toString(),
+                                            NumberFormat.decimalPattern("ar_EG")
+                                                .format(
+                                              int.parse(
+                                                ayat["nomor"].toString(),
+                                              ),
+                                            ),
                                             style: blackBold12,
                                           ),
                                         ],
@@ -352,6 +378,7 @@ class QuranView extends GetView<QuranController> {
                             }
                           },
                         ),
+                        
                       ),
                       const SizedBox(
                         height: 20,

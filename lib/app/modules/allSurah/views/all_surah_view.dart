@@ -162,6 +162,136 @@ class AllSurahView extends GetView<AllSurahController> {
                               ),
                             ],
                           )),
+
+                      // section - bookmark
+                      // ignore: unrelated_type_equality_checks
+                      if (controller.bookmarkedID == 0)
+                        const SizedBox()
+                      else
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      itemCount: 1,
+                                      itemBuilder: (context, index) {
+                                        var bookmarkID =
+                                            controller.bookmarkedID.toInt();
+                                        var surah = controller
+                                            .allSurah[bookmarkID.toInt() - 1];
+                                        return InkWell(
+                                          onTap: () {
+                                            Get.to(
+                                              () => const QuranView(),
+                                              arguments: {
+                                                "surahID": surah["nomor"],
+                                              },
+                                            );
+                                          },
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              image: const DecorationImage(
+                                                image: AssetImage(
+                                                  "assets/images/bannerSurah.png",
+                                                ),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 10,
+                                              ),
+                                              child: Stack(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            20),
+                                                    child: Column(
+                                                      children: [
+                                                        // section - surah
+                                                        Text(
+                                                          surah["nama_latin"],
+                                                          style: whiteBold20,
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+
+                                                        // section - info
+                                                        const Text(
+                                                          "Bacaan Terakhir",
+                                                          style: whiteW30012,
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 20,
+                                                        ),
+
+                                                        // section - border
+                                                        Container(
+                                                          width: MediaQuery.of(
+                                                                  context)
+                                                              .size
+                                                              .width,
+                                                          height: 0.25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: cultured,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        1),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 20,
+                                                        ),
+
+                                                        // section - meaning and number of verses
+                                                        Text(
+                                                          "${surah["arti"]} • ${surah["jumlah_ayat"].toString()} Ayat",
+                                                          style: whiteW30012,
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+
+                                                        // section - bismillah
+                                                        const Text(
+                                                          "Lanjutkan Bacaan",
+                                                          style: whiteBold24,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                       const SizedBox(
                         height: 20,
                       ),

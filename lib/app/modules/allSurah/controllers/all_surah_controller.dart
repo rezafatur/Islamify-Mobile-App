@@ -1,21 +1,17 @@
 import 'dart:convert';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:islamify/app/data/services/api_service.dart';
 
 class AllSurahController extends GetxController {
   final ApiService apiService = ApiService();
+  final GetStorage storage = GetStorage();
 
   // list of all surah
   RxList<Map<String, dynamic>> allSurah = <Map<String, dynamic>>[].obs;
 
   // loading active data
   RxBool isLoading = true.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
-    fetchData();
-  }
 
   // fetch data from api service
   Future<void> fetchData() async {
@@ -52,5 +48,24 @@ class AllSurahController extends GetxController {
       // loading data is complete
       isLoading.value = false;
     }
+  }
+
+  // Property to store bookmarkedID
+  RxInt bookmarkedID = RxInt(0);
+
+  // function to check and set initial bookmark status
+  void checkBookmarkStatus() {
+    var storedID = storage.read<int>("bookmark");
+    bookmarkedID.value = storedID ?? 0;
+    print(bookmarkedID.value);
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    fetchData();
+
+    // check and set initial bookmark status
+    checkBookmarkStatus();
   }
 }
