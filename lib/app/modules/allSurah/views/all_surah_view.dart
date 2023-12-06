@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:islamify/app/controller/page_index.dart';
+import 'package:islamify/app/modules/quran/views/quran_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import '../controllers/all_surah_controller.dart';
@@ -118,37 +119,49 @@ class AllSurahView extends GetView<AllSurahController> {
 
                       // section - search surah
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        child: TextField(
-                          style: blackBold12,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(
-                              Icons.search,
-                              color: wintergreenDream,
-                            ),
-                            hintText: "Cari Surah",
-                            hintStyle: blackBold12,
-                            filled: true,
-                            fillColor: cultured,
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: wintergreenDream,
-                                width: 2,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: wintergreenDream,
-                                width: 2,
-                              ),
-                            ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
                           ),
-                        ),
-                      ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        color: wintergreenDream,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 10,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.search,
+                                            color: wintergreenDream,
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            "Cari Surah",
+                                            style: blackBold12,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
                       const SizedBox(
                         height: 20,
                       ),
@@ -177,7 +190,14 @@ class AllSurahView extends GetView<AllSurahController> {
                               itemBuilder: (context, index) {
                                 var surah = controller.allSurah[index];
                                 return InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.to(
+                                      () => const QuranView(),
+                                      arguments: {
+                                        "surahID": surah["nomor"],
+                                      },
+                                    );
+                                  },
                                   child: Column(
                                     children: [
                                       const SizedBox(

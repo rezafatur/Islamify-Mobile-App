@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:islamify/core/theme/colors.dart';
 
 // Text with White Color (Large, Medium, and Small)
+const whiteW30012 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.w300,
+);
+
 const whiteW30016 = TextStyle(
   color: Colors.white,
   fontFamily: "Montserrat",
@@ -13,6 +20,20 @@ const whiteBold16 = TextStyle(
   color: Colors.white,
   fontFamily: "Montserrat",
   fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
+
+const whiteBold20 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+
+const whiteBold24 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 24,
   fontWeight: FontWeight.bold,
 );
 
@@ -71,6 +92,13 @@ const blackBold16 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
   fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
+
+const blackBold18 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Montserrat",
+  fontSize: 18,
   fontWeight: FontWeight.bold,
 );
 

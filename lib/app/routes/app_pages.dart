@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/allSurah/bindings/all_surah_binding.dart';
+import '../modules/allSurah/views/all_surah_view.dart';
 import '../modules/editProfile/bindings/edit_profile_binding.dart';
 import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -10,10 +12,10 @@ import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/quran/bindings/quran_binding.dart';
+import '../modules/quran/views/quran_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
-import '../modules/allSurah/bindings/all_surah_binding.dart';
-import '../modules/allSurah/views/all_surah_view.dart';
 
 part 'app_routes.dart';
 
@@ -60,6 +62,11 @@ class AppPages {
       name: _Paths.EDIT_PROFILE,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.QURAN,
+      page: () => const QuranView(),
+      binding: QuranBinding(),
     ),
   ];
 }
