@@ -55,4 +55,17 @@ class HomeController extends GetxController {
     _bannerAd?.dispose();
     super.dispose();
   }
+
+  String getGreeting() {
+    int hour = DateTime.now().hour;
+    if (hour >= 5 && hour < 11) {
+      return "Selamat Pagi 👋😁\n";
+    } else if (hour < 15) {
+      return "Selamat Siang 👋😁\n";
+    } else if (hour < 18) {
+      return "Selamat Sore 👋😁\n";
+    } else {
+      return "Selamat Malam 👋😁\n";
+    }
+  }
 }

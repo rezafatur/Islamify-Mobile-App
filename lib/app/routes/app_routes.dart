@@ -12,6 +12,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
   static const QURAN = _Paths.QURAN;
+  static const ALL_LEARNING = _Paths.ALL_LEARNING;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const EDIT_PROFILE = '/edit-profile';
   static const QURAN = '/quran';
+  static const ALL_LEARNING = '/all-learning';
 }

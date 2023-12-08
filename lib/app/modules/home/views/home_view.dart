@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islamify/app/controller/page_index.dart';
 import 'package:islamify/app/data/models/learning_quran_data.dart';
+import 'package:islamify/app/modules/allLearning/views/all_learning_view.dart';
 import 'package:islamify/app/modules/home/controllers/home_controller.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -76,10 +77,10 @@ class HomeView extends GetView<HomeController> {
                     Expanded(
                       flex: 2,
                       child: RichText(
-                        text: const TextSpan(
-                          text: "Selamat Pagi! 👋😁\n",
+                        text: TextSpan(
+                          text: controller.getGreeting(),
                           style: blackW30018,
-                          children: [
+                          children: const [
                             TextSpan(
                               text: "Dimas",
                               style: blackBold24,
@@ -138,7 +139,11 @@ class HomeView extends GetView<HomeController> {
                           style: blackBold12,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(
+                              () => AllLearningView(),
+                            );
+                          },
                           child: const Text(
                             "Lihat Semua",
                             style: pictonBlueBold12,
@@ -166,7 +171,11 @@ class HomeView extends GetView<HomeController> {
                           if (index == 5 &&
                               controller.contentsLearn.length > 5) {
                             return InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(
+                                  () => AllLearningView(),
+                                );
+                              },
                               child: SizedBox(
                                 width: 200,
                                 child: Container(

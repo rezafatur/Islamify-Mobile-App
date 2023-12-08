@@ -16,45 +16,17 @@ class Learning {
 
 List<Learning> learningContents = [
   Learning(
-    material: "Material 1",
+    material: "Materi 1",
     title: "Belajar Huruf Hijaiyah",
     description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
     image: "assets/images/belajarQuran1.png",
-    lesson: 2,
+    lesson: 3,
   ),
   Learning(
-    material: "Material 1",
-    title: "Belajar Huruf Hijaiyah",
-    description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
-    image: "assets/images/belajarQuran1.png",
-    lesson: 2,
-  ),
-  Learning(
-    material: "Material 1",
-    title: "Belajar Huruf Hijaiyah",
-    description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
-    image: "assets/images/belajarQuran1.png",
-    lesson: 2,
-  ),
-  Learning(
-    material: "Material 1",
-    title: "Belajar Huruf Hijaiyah",
-    description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
-    image: "assets/images/belajarQuran1.png",
-    lesson: 2,
-  ),
-  Learning(
-    material: "Material 1",
-    title: "Belajar Huruf Hijaiyah",
-    description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
-    image: "assets/images/belajarQuran1.png",
-    lesson: 2,
-  ),
-  Learning(
-    material: "Material 1",
-    title: "Belajar Huruf Hijaiyah",
-    description: "Belajar membaca, mengetahui, dan mengucapkan huruf Hijaiyah.",
-    image: "assets/images/belajarQuran1.png",
+    material: "Materi 2",
+    title: "Belajar Bentuk dan Bacaan Huruf Hijaiyah",
+    description: "Mempelajari bentuk-bentuk lain dari huruf Hijaiyah.",
+    image: "assets/images/belajarQuran2.png",
     lesson: 2,
   ),
 ];
