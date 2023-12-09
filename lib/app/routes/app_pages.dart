@@ -17,6 +17,8 @@ import '../modules/quran/bindings/quran_binding.dart';
 import '../modules/quran/views/quran_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/reward/bindings/reward_binding.dart';
+import '../modules/reward/views/reward_view.dart';
 
 part 'app_routes.dart';
 
@@ -73,6 +75,11 @@ class AppPages {
       name: _Paths.ALL_EXAM,
       page: () => AllExamView(),
       binding: AllExamBinding(),
+    ),
+    GetPage(
+      name: _Paths.REWARD,
+      page: () => RewardView(),
+      binding: RewardBinding(),
     ),
   ];
 }

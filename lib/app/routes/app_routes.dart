@@ -13,6 +13,7 @@ abstract class Routes {
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
   static const QURAN = _Paths.QURAN;
   static const ALL_EXAM = _Paths.ALL_EXAM;
+  static const REWARD = _Paths.REWARD;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const EDIT_PROFILE = '/edit-profile';
   static const QURAN = '/quran';
   static const ALL_EXAM = '/all-exam';
+  static const REWARD = '/reward';
 }

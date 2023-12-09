@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:islamify/app/controller/page_index.dart';
 import 'package:islamify/app/modules/editProfile/views/edit_profile_view.dart';
 import 'package:islamify/app/modules/login/views/login_view.dart';
+import 'package:islamify/app/modules/reward/views/reward_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import '../controllers/profile_controller.dart';
@@ -295,7 +296,11 @@ class ProfileView extends GetView<ProfileController> {
                   horizontal: 20,
                 ),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(
+                      () => RewardView(),
+                    );
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
