@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:islamify/app/data/models/learning_quran_data.dart';
+import 'package:islamify/app/data/models/exam_data.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
-import '../controllers/all_learning_controller.dart';
+import '../controllers/all_exam_controller.dart';
 
-class AllLearningView extends GetView<AllLearningController> {
-  AllLearningView({Key? key}) : super(key: key);
+class AllExamView extends GetView<AllExamController> {
+  AllExamView({Key? key}) : super(key: key);
 
   @override
-  final AllLearningController controller = Get.put(
-    AllLearningController(),
+  final AllExamController controller = Get.put(
+    AllExamController(),
   );
 
   @override
@@ -37,13 +37,13 @@ class AllLearningView extends GetView<AllLearningController> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              // section - main content learning
+              // section - main content exam
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: controller.contentsLearn.length,
+                itemCount: controller.contentsExam.length,
                 itemBuilder: (context, index) {
-                  Learning content = controller.contentsLearn[index];
+                  Exam content = controller.contentsExam[index];
                   return InkWell(
                     onTap: () {},
                     child: Column(
@@ -52,7 +52,7 @@ class AllLearningView extends GetView<AllLearningController> {
                           height: 20,
                         ),
 
-                        // section - content learning
+                        // section - content exam
                         Row(
                           children: [
                             // section - image
@@ -83,7 +83,7 @@ class AllLearningView extends GetView<AllLearningController> {
                                           vertical: 5,
                                         ),
                                         child: Text(
-                                          content.material,
+                                          "Ujian ${index + 1}",
                                           style: blackW30012,
                                         ),
                                       ),
@@ -96,7 +96,7 @@ class AllLearningView extends GetView<AllLearningController> {
                               width: 20,
                             ),
 
-                            // section - title, description, and lessons
+                            // section - title, description, and exam
                             Expanded(
                               flex: 2,
                               child: Column(
@@ -105,6 +105,8 @@ class AllLearningView extends GetView<AllLearningController> {
                                   Text(
                                     content.title,
                                     style: blackBold10,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
                                   ),
                                   const SizedBox(
                                     height: 10,
@@ -112,21 +114,23 @@ class AllLearningView extends GetView<AllLearningController> {
                                   Text(
                                     content.description,
                                     style: blackW30010,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
                                   ),
                                   const SizedBox(
                                     height: 10,
                                   ),
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        "assets/images/iconLesson.png",
-                                        scale: 40,
+                                      const Icon(
+                                        Icons.library_books,
+                                        size: 15,
                                       ),
                                       const SizedBox(
                                         width: 5,
                                       ),
                                       Text(
-                                        "${content.lesson.toString()} pelajaran",
+                                        "${content.exam.toString()} pelajaran",
                                         style: blackW30010,
                                       ),
                                     ],

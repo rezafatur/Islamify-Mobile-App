@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islamify/app/controller/ad_helper.dart';
-import 'package:islamify/app/data/models/learning_quran_data.dart';
+import 'package:islamify/app/data/models/exam_data.dart';
 
 class HomeController extends GetxController {
-  final contentsLearning = <Learning>[];
+  final contentsAllExam = <Exam>[];
 
   BannerAd? _bannerAd;
 
   HomeController() {
-    contentsLearning.addAll(learningContents);
+    contentsAllExam.addAll(examContents);
     initGoogleMobileAds();
     loadBannerAd();
   }
 
-  List<Learning> get contentsLearn => contentsLearning;
+  List<Exam> get contentsExam => contentsAllExam;
 
   final _currentPage = 0.obs;
   int get currentPage => _currentPage.value;

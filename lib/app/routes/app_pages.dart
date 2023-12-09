@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import '../modules/allLearning/bindings/all_learning_binding.dart';
-import '../modules/allLearning/views/all_learning_view.dart';
+import '../modules/allExam/bindings/all_exam_binding.dart';
+import '../modules/allExam/views/all_exam_view.dart';
 import '../modules/allSurah/bindings/all_surah_binding.dart';
 import '../modules/allSurah/views/all_surah_view.dart';
 import '../modules/editProfile/bindings/edit_profile_binding.dart';
@@ -70,9 +70,9 @@ class AppPages {
       binding: QuranBinding(),
     ),
     GetPage(
-      name: _Paths.ALL_LEARNING,
-      page: () => AllLearningView(),
-      binding: AllLearningBinding(),
+      name: _Paths.ALL_EXAM,
+      page: () => AllExamView(),
+      binding: AllExamBinding(),
     ),
   ];
 }

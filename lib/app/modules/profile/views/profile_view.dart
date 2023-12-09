@@ -196,7 +196,7 @@ class ProfileView extends GetView<ProfileController> {
                 height: 20,
               ),
 
-              // section - selesai materi & status level
+              // section - exam done & points
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -218,7 +218,7 @@ class ProfileView extends GetView<ProfileController> {
                           child: Row(
                             children: [
                               Image.asset(
-                                "assets/images/iconSelesai.png",
+                                "assets/images/iconDone.png",
                                 scale: 15,
                               ),
                               const SizedBox(
@@ -226,7 +226,7 @@ class ProfileView extends GetView<ProfileController> {
                               ),
                               RichText(
                                 text: const TextSpan(
-                                  text: "Selesai Materi\n",
+                                  text: "Ujian Selesai\n",
                                   style: blackW30012,
                                   children: [
                                     TextSpan(
@@ -259,7 +259,7 @@ class ProfileView extends GetView<ProfileController> {
                           child: Row(
                             children: [
                               Image.asset(
-                                "assets/images/iconStatus.png",
+                                "assets/images/iconPoints.png",
                                 scale: 15,
                               ),
                               const SizedBox(
@@ -267,11 +267,11 @@ class ProfileView extends GetView<ProfileController> {
                               ),
                               RichText(
                                 text: const TextSpan(
-                                  text: "Status Level\n",
+                                  text: "Poin Anda\n",
                                   style: blackW30012,
                                   children: [
                                     TextSpan(
-                                      text: "Pemula",
+                                      text: "10000",
                                       style: blackBold12,
                                     )
                                   ],
@@ -283,6 +283,64 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+
+              // section - rewards
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
+                        image: AssetImage(
+                          "assets/images/bannerSurah.png",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "Hadiah",
+                                        style: whiteBold20,
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "Tukarkan poin Anda!",
+                                        style: whiteW30012,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(

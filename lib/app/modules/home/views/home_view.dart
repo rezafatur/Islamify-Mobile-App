@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islamify/app/controller/page_index.dart';
-import 'package:islamify/app/data/models/learning_quran_data.dart';
-import 'package:islamify/app/modules/allLearning/views/all_learning_view.dart';
+import 'package:islamify/app/data/models/exam_data.dart';
+import 'package:islamify/app/modules/allExam/views/all_exam_view.dart';
 import 'package:islamify/app/modules/home/controllers/home_controller.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
@@ -123,7 +123,7 @@ class HomeView extends GetView<HomeController> {
                 height: 20,
               ),
 
-              // section - belajar membaca al-qur'an
+              // section - uji kemampuan
               Column(
                 children: [
                   Padding(
@@ -135,13 +135,13 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Text(
-                          "Ayo belajar membaca Al-Qur'an!",
+                          "Uji Kemampuan Anda!",
                           style: blackBold12,
                         ),
                         InkWell(
                           onTap: () {
                             Get.to(
-                              () => AllLearningView(),
+                              () => AllExamView(),
                             );
                           },
                           child: const Text(
@@ -163,17 +163,17 @@ class HomeView extends GetView<HomeController> {
                           horizontal: 20,
                         ),
                         scrollDirection: Axis.horizontal,
-                        itemCount: controller.contentsLearn.length > 5
+                        itemCount: controller.contentsExam.length > 5
                             ? 6
-                            : controller.contentsLearn.length,
+                            : controller.contentsExam.length,
                         itemBuilder: (context, index) {
-                          Learning content = controller.contentsLearn[index];
+                          Exam content = controller.contentsExam[index];
                           if (index == 5 &&
-                              controller.contentsLearn.length > 5) {
+                              controller.contentsExam.length > 5) {
                             return InkWell(
                               onTap: () {
                                 Get.to(
-                                  () => AllLearningView(),
+                                  () => AllExamView(),
                                 );
                               },
                               child: SizedBox(
@@ -214,15 +214,43 @@ class HomeView extends GetView<HomeController> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                    ),
-                                    child: Image.asset(
-                                      content.image,
-                                      fit: BoxFit.cover,
-                                    ),
+                                  Stack(
+                                    alignment: Alignment.topLeft,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                        ),
+                                        child: Image.asset(
+                                          content.image,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10,
+                                          vertical: 10,
+                                        ),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: opal,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                              vertical: 5,
+                                            ),
+                                            child: Text(
+                                              "Ujian ${index + 1}",
+                                              style: blackW30012,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   const SizedBox(
                                     height: 20,
@@ -238,6 +266,8 @@ class HomeView extends GetView<HomeController> {
                                         Text(
                                           content.title,
                                           style: blackBold10,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
                                         ),
                                         const SizedBox(
                                           height: 10,
@@ -245,21 +275,23 @@ class HomeView extends GetView<HomeController> {
                                         Text(
                                           content.description,
                                           style: blackW30010,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 2,
                                         ),
                                         const SizedBox(
                                           height: 10,
                                         ),
                                         Row(
                                           children: [
-                                            Image.asset(
-                                              "assets/images/iconLesson.png",
-                                              scale: 40,
+                                            const Icon(
+                                              Icons.library_books,
+                                              size: 15,
                                             ),
                                             const SizedBox(
                                               width: 5,
                                             ),
                                             Text(
-                                              "${content.lesson.toString()} pelajaran",
+                                              "${content.exam.toString()} pelajaran",
                                               style: blackW30010,
                                             ),
                                           ],
