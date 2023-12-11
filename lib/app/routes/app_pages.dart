@@ -7,6 +7,8 @@ import '../modules/editProfile/bindings/edit_profile_binding.dart';
 import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/levelExam/bindings/level_exam_binding.dart';
+import '../modules/levelExam/views/level_exam_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -80,6 +82,11 @@ class AppPages {
       name: _Paths.REWARD,
       page: () => RewardView(),
       binding: RewardBinding(),
+    ),
+    GetPage(
+      name: _Paths.LEVEL_EXAM,
+      page: () => LevelExamView(),
+      binding: LevelExamBinding(),
     ),
   ];
 }

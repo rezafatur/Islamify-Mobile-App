@@ -16,7 +16,6 @@ dependencies:
   shared_preferences: ^2.2.0
   carousel_slider: ^4.2.1
   convex_bottom_bar: ^3.2.0
-  percent_indicator: ^4.2.3
   google_mobile_ads: ^3.1.0
   http: ^1.1.0
   audioplayers: ^5.2.1

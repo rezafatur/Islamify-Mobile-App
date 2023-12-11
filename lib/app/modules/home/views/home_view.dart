@@ -7,6 +7,7 @@ import 'package:islamify/app/controller/page_index.dart';
 import 'package:islamify/app/data/models/exam_data.dart';
 import 'package:islamify/app/modules/allExam/views/all_exam_view.dart';
 import 'package:islamify/app/modules/home/controllers/home_controller.dart';
+import 'package:islamify/app/modules/levelExam/views/level_exam_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 
@@ -126,6 +127,7 @@ class HomeView extends GetView<HomeController> {
               // section - uji kemampuan
               Column(
                 children: [
+                  // section - test your skills and view all exams
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -155,6 +157,8 @@ class HomeView extends GetView<HomeController> {
                   const SizedBox(
                     height: 10,
                   ),
+
+                  // section - exams content
                   SingleChildScrollView(
                     child: SizedBox(
                       height: 321,
@@ -204,7 +208,14 @@ class HomeView extends GetView<HomeController> {
                             );
                           }
                           return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.to(
+                                () => LevelExamView(),
+                                arguments: {
+                                  "examID": index + 1,
+                                },
+                              );
+                            },
                             child: Container(
                               width: 200,
                               decoration: BoxDecoration(
@@ -291,7 +302,7 @@ class HomeView extends GetView<HomeController> {
                                               width: 5,
                                             ),
                                             Text(
-                                              "${content.exam.toString()} pelajaran",
+                                              "${content.totalExam.toString()} Ujian",
                                               style: blackW30010,
                                             ),
                                           ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:islamify/app/data/models/exam_data.dart';
+import 'package:islamify/app/modules/levelExam/views/level_exam_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import '../controllers/all_exam_controller.dart';
@@ -33,6 +33,7 @@ class AllExamView extends GetView<AllExamController> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -43,9 +44,16 @@ class AllExamView extends GetView<AllExamController> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: controller.contentsExam.length,
                 itemBuilder: (context, index) {
-                  Exam content = controller.contentsExam[index];
+                  var content = controller.contentsExam[index];
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(
+                        () => LevelExamView(),
+                        arguments: {
+                          "examID": index + 1,
+                        },
+                      );
+                    },
                     child: Column(
                       children: [
                         const SizedBox(
@@ -130,7 +138,7 @@ class AllExamView extends GetView<AllExamController> {
                                         width: 5,
                                       ),
                                       Text(
-                                        "${content.exam.toString()} pelajaran",
+                                        "${content.totalExam.toString()} Ujian",
                                         style: blackW30010,
                                       ),
                                     ],
