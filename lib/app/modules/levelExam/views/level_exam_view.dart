@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:islamify/app/modules/exam/views/exam_view.dart';
 import 'package:islamify/core/theme/colors.dart';
 import 'package:islamify/core/theme/text_theme.dart';
 import '../controllers/level_exam_controller.dart';
@@ -215,7 +216,11 @@ class LevelExamView extends GetView<LevelExamController> {
                   return Column(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(
+                            () => ExamView(),
+                          );
+                        },
                         child: Column(
                           children: [
                             Row(
@@ -249,7 +254,7 @@ class LevelExamView extends GetView<LevelExamController> {
                                                 RichText(
                                                   text: TextSpan(
                                                     text:
-                                                        "Ujian ${(index + 1).toString()}\n",
+                                                        "Ujian ke-${(index + 1).toString()}\n",
                                                     style: blackBold12,
                                                     children: [
                                                       TextSpan(

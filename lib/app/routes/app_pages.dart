@@ -5,6 +5,8 @@ import '../modules/allSurah/bindings/all_surah_binding.dart';
 import '../modules/allSurah/views/all_surah_view.dart';
 import '../modules/editProfile/bindings/edit_profile_binding.dart';
 import '../modules/editProfile/views/edit_profile_view.dart';
+import '../modules/exam/bindings/exam_binding.dart';
+import '../modules/exam/views/exam_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/levelExam/bindings/level_exam_binding.dart';
@@ -87,6 +89,11 @@ class AppPages {
       name: _Paths.LEVEL_EXAM,
       page: () => LevelExamView(),
       binding: LevelExamBinding(),
+    ),
+    GetPage(
+      name: _Paths.EXAM,
+      page: () => ExamView(),
+      binding: ExamBinding(),
     ),
   ];
 }

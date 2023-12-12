@@ -16,6 +16,13 @@ const whiteW30016 = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const whiteBold12 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+);
+
 const whiteBold16 = TextStyle(
   color: Colors.white,
   fontFamily: "Montserrat",
@@ -105,6 +112,13 @@ const blackBold18 = TextStyle(
 const blackBold24 = TextStyle(
   color: Colors.black,
   fontFamily: "Montserrat",
+  fontSize: 24,
+  fontWeight: FontWeight.bold,
+);
+
+const blackBoldArabic24 = TextStyle(
+  color: Colors.black,
+  fontFamily: "Amiri",
   fontSize: 24,
   fontWeight: FontWeight.bold,
 );

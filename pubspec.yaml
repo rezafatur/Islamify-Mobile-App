@@ -21,6 +21,7 @@ dependencies:
   audioplayers: ^5.2.1
   intl: ^0.18.1
   get_storage: ^2.1.1
+  speech_to_text: ^6.5.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -35,5 +36,10 @@ flutter:
       fonts:
         - asset: fonts/Montserrat-Regular.ttf
         - asset: fonts/Montserrat-Bold.ttf
+          weight: 700
+    - family: Amiri
+      fonts:
+        - asset: fonts/Amiri-Regular.ttf
+        - asset: fonts/Amiri-Bold.ttf
           weight: 700
   uses-material-design: true

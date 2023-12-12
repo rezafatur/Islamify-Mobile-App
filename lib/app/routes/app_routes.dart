@@ -15,6 +15,7 @@ abstract class Routes {
   static const ALL_EXAM = _Paths.ALL_EXAM;
   static const REWARD = _Paths.REWARD;
   static const LEVEL_EXAM = _Paths.LEVEL_EXAM;
+  static const EXAM = _Paths.EXAM;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const ALL_EXAM = '/all-exam';
   static const REWARD = '/reward';
   static const LEVEL_EXAM = '/level-exam';
+  static const EXAM = '/exam';
 }
