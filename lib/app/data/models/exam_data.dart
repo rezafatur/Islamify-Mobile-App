@@ -18,10 +18,14 @@ class Exam {
 
 class Level {
   final String tingkatan;
+  final String soal;
+  final String jawaban;
   final double progress;
 
   Level({
     required this.tingkatan,
+    required this.soal,
+    required this.jawaban,
     required this.progress,
   });
 }
@@ -37,14 +41,20 @@ List<Exam> examContents = [
     levels: [
       Level(
         tingkatan: "Pemula",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
       Level(
         tingkatan: "Menengah",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
       Level(
         tingkatan: "Mahir",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
     ],
@@ -59,14 +69,20 @@ List<Exam> examContents = [
     levels: [
       Level(
         tingkatan: "Pemula",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
       Level(
         tingkatan: "Menengah",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
       Level(
         tingkatan: "Mahir",
+        soal: "ا ب ت ث",
+        jawaban: "ا ب ت ث",
         progress: 0,
       ),
     ],

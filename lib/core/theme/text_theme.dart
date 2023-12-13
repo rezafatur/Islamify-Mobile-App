@@ -30,6 +30,13 @@ const whiteBold16 = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const whiteBold18 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);
+
 const whiteBold20 = TextStyle(
   color: Colors.white,
   fontFamily: "Montserrat",
@@ -41,6 +48,13 @@ const whiteBold24 = TextStyle(
   color: Colors.white,
   fontFamily: "Montserrat",
   fontSize: 24,
+  fontWeight: FontWeight.bold,
+);
+
+const whiteBold60 = TextStyle(
+  color: Colors.white,
+  fontFamily: "Montserrat",
+  fontSize: 60,
   fontWeight: FontWeight.bold,
 );
 

@@ -219,6 +219,10 @@ class LevelExamView extends GetView<LevelExamController> {
                         onTap: () {
                           Get.to(
                             () => ExamView(),
+                            arguments: {
+                              "examID": controller.examID,
+                              "levelID": index,
+                            },
                           );
                         },
                         child: Column(
