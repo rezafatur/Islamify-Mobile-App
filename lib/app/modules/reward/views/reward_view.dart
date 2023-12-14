@@ -13,6 +13,174 @@ class RewardView extends GetView<RewardController> {
     RewardController(),
   );
 
+  // pop out - successfully redeemed points
+  void showSuccessDialog() {
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: cultured,
+        elevation: 5,
+        title: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: msuGreen,
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/bannerJawaban.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "🤩",
+                          style: whiteBold60,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Selamat!",
+                          style: whiteBold18,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Penukaran Anda berhasil 👏😁",
+                          style: whiteW30012,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            // section - Back Button
+            InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: msuGreen,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Kembali",
+                        style: whiteBold12,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // pop out - failed to redeem points
+  void showFailureDialog() {
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: cultured,
+        elevation: 5,
+        title: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: msuGreen,
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/bannerJawaban.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "😔",
+                          style: whiteBold60,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Maaf!",
+                          style: whiteBold18,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Poin Anda tidak cukup 🙏😔",
+                          style: whiteW30012,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            // section - Back Button
+            InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: msuGreen,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Kembali",
+                        style: whiteBold12,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,7 +302,15 @@ class RewardView extends GetView<RewardController> {
                 itemBuilder: (context, index) {
                   var reward = controller.contentsAllReward[index];
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      if (250 >= reward.coins) {
+                        // user has enough points, then show success dialog
+                        showSuccessDialog();
+                      } else {
+                        // user doesn't have enough points, then show failure dialog
+                        showFailureDialog();
+                      }
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
