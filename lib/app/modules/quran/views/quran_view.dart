@@ -174,7 +174,7 @@ class QuranView extends GetView<QuranController> {
                                   ],
                                 ),
                                 const SizedBox(
-                                  height: 20,
+                                  height: 10,
                                 ),
 
                                 // section - bookmark and audio
@@ -196,8 +196,14 @@ class QuranView extends GetView<QuranController> {
                                                   BorderRadius.circular(10),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(20),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                horizontal: 10,
+                                                vertical: 20,
+                                              ),
                                               child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     controller
@@ -225,7 +231,7 @@ class QuranView extends GetView<QuranController> {
                                       ),
                                     ),
                                     const SizedBox(
-                                      width: 20,
+                                      width: 10,
                                     ),
                                     Expanded(
                                       child: InkWell(
@@ -245,8 +251,14 @@ class QuranView extends GetView<QuranController> {
                                                   BorderRadius.circular(10),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(20),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                horizontal: 10,
+                                                vertical: 20,
+                                              ),
                                               child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     controller.isPlaying.value
@@ -378,7 +390,6 @@ class QuranView extends GetView<QuranController> {
                             }
                           },
                         ),
-                        
                       ),
                       const SizedBox(
                         height: 20,

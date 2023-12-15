@@ -361,7 +361,7 @@ class AllSurahView extends GetView<AllSurahController> {
                                             width: 20,
                                           ),
                                           Expanded(
-                                            flex: 3,
+                                            flex: 2,
                                             child: RichText(
                                               text: TextSpan(
                                                 text:
@@ -371,7 +371,7 @@ class AllSurahView extends GetView<AllSurahController> {
                                                   TextSpan(
                                                     text:
                                                         "${surah["arti"]} • ${surah["jumlah_ayat"].toString()} Ayat",
-                                                    style: blackW30012,
+                                                    style: blackW30010,
                                                   )
                                                 ],
                                               ),

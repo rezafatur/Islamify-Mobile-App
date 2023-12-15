@@ -12,7 +12,7 @@ class OnboardingView extends GetView<OnboardingController> {
   const OnboardingView({Key? key}) : super(key: key);
 
   // dots Indicator
-  AnimatedContainer dotsIndicator({int? index, required bool isDarkMode}) {
+  AnimatedContainer dotsIndicator({int? index}) {
     return AnimatedContainer(
       duration: const Duration(
         milliseconds: 200,
@@ -21,11 +21,7 @@ class OnboardingView extends GetView<OnboardingController> {
         borderRadius: const BorderRadius.all(
           Radius.circular(10),
         ),
-        color: controller.currentPage == index
-            ? isDarkMode
-                ? azureishWhite
-                : wintergreenDream
-            : opal,
+        color: controller.currentPage == index ? wintergreenDream : opal,
       ),
       margin: const EdgeInsets.symmetric(
         horizontal: 5,
@@ -41,13 +37,8 @@ class OnboardingView extends GetView<OnboardingController> {
     // initializing the screen width and height
     SizeConfig().init(context);
 
-    // determine the current theme mode (light or dark)
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-
-    // Set the background color based on the theme mode
-    Color bgColor = isDarkMode ? richBlack : cultured;
-
     return Scaffold(
+      backgroundColor: cultured,
       body: SafeArea(
         child: Column(
           children: [
@@ -69,11 +60,11 @@ class OnboardingView extends GetView<OnboardingController> {
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: Colors.black,
                                 offset: Offset.zero,
-                                blurRadius: isDarkMode ? 0 : 5,
+                                blurRadius: 5,
                               ),
                             ],
                           ),
@@ -92,9 +83,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         // section - title
                         AutoSizeText(
                           content.title,
-                          style: isDarkMode
-                              ? azureishWhiteBold32
-                              : winterDreamBold32,
+                          style: winterDreamBold32,
                           textAlign: TextAlign.center,
                           maxLines: 1,
                         ),
@@ -105,7 +94,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         // section - description
                         AutoSizeText(
                           content.description,
-                          style: isDarkMode ? whiteW30016 : richBlackW30016,
+                          style: richBlackW30016,
                           textAlign: TextAlign.center,
                           maxLines: 10,
                         ),
@@ -130,7 +119,6 @@ class OnboardingView extends GetView<OnboardingController> {
                         controller.contentsOnboarding.length,
                         (int index) => dotsIndicator(
                           index: index,
-                          isDarkMode: isDarkMode,
                         ),
                       ),
                     ),
@@ -149,9 +137,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                 );
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: isDarkMode
-                                    ? azureishWhite
-                                    : wintergreenDream,
+                                backgroundColor: wintergreenDream,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50),
                                 ),
@@ -160,9 +146,9 @@ class OnboardingView extends GetView<OnboardingController> {
                                   vertical: 20,
                                 ),
                               ),
-                              child: AutoSizeText(
+                              child: const AutoSizeText(
                                 "Mulai Sekarang",
-                                style: isDarkMode ? blackBold16 : whiteBold16,
+                                style: whiteBold16,
                                 maxLines: 1,
                               ),
                             ),
@@ -178,10 +164,9 @@ class OnboardingView extends GetView<OnboardingController> {
                                   onPressed: () {
                                     controller.pageController.jumpToPage(3);
                                   },
-                                  child: AutoSizeText(
+                                  child: const AutoSizeText(
                                     "Lewati",
-                                    style:
-                                        isDarkMode ? whiteBold16 : blackBold16,
+                                    style: blackBold16,
                                     maxLines: 1,
                                   ),
                                 ),
@@ -190,9 +175,7 @@ class OnboardingView extends GetView<OnboardingController> {
                                 ElevatedButton(
                                   onPressed: controller.nextPage,
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: isDarkMode
-                                        ? azureishWhite
-                                        : wintergreenDream,
+                                    backgroundColor: wintergreenDream,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50),
                                     ),
@@ -202,10 +185,9 @@ class OnboardingView extends GetView<OnboardingController> {
                                       vertical: 20,
                                     ),
                                   ),
-                                  child: AutoSizeText(
+                                  child: const AutoSizeText(
                                     "Selanjutnya",
-                                    style:
-                                        isDarkMode ? blackBold16 : whiteBold16,
+                                    style: whiteBold16,
                                     maxLines: 1,
                                   ),
                                 ),
@@ -219,7 +201,6 @@ class OnboardingView extends GetView<OnboardingController> {
           ],
         ),
       ),
-      backgroundColor: bgColor,
     );
   }
 }

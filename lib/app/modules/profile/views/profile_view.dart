@@ -201,7 +201,7 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
 
               // section - exam done & points
@@ -222,8 +222,12 @@ class ProfileView extends GetView<ProfileController> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 20,
+                          ),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
                                 "assets/images/iconDone.png",
@@ -250,7 +254,7 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Expanded(
                       flex: 1,
@@ -263,8 +267,12 @@ class ProfileView extends GetView<ProfileController> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 20,
+                          ),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
                                 "assets/images/iconPoints.png",
