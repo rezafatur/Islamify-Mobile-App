@@ -381,7 +381,7 @@ class ExamView extends GetView<ExamController> {
                                         height: 20,
                                       ),
 
-                                      // section - Back Button
+                                      // section - back button
                                       InkWell(
                                         onTap: () {
                                           Get.back();
@@ -474,7 +474,7 @@ class ExamView extends GetView<ExamController> {
                                         height: 20,
                                       ),
 
-                                      // section - Back Button
+                                      // section - back button
                                       InkWell(
                                         onTap: () {
                                           Get.back();

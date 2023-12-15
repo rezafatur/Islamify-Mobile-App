@@ -66,7 +66,7 @@ class RewardView extends GetView<RewardController> {
               height: 20,
             ),
 
-            // section - Back Button
+            // section - back button
             InkWell(
               onTap: () {
                 Get.back();
@@ -150,7 +150,7 @@ class RewardView extends GetView<RewardController> {
               height: 20,
             ),
 
-            // section - Back Button
+            // section - back button
             InkWell(
               onTap: () {
                 Get.back();

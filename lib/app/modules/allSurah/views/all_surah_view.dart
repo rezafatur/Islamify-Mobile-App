@@ -113,55 +113,56 @@ class AllSurahView extends GetView<AllSurahController> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      // const SizedBox(
+                      //   height: 20,
+                      // ),
 
                       // section - search surah
-                      Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(
-                                        color: wintergreenDream,
-                                        width: 2,
-                                      ),
-                                    ),
-                                    child: const Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 20,
-                                        vertical: 10,
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            Icons.search,
-                                            color: wintergreenDream,
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Text(
-                                            "Cari Surah",
-                                            style: blackBold12,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )),
+                      // Padding(
+                      //   padding: const EdgeInsets.symmetric(
+                      //     horizontal: 20,
+                      //   ),
+                      //   child: Row(
+                      //     crossAxisAlignment: CrossAxisAlignment.start,
+                      //     children: [
+                      //       Expanded(
+                      //         child: InkWell(
+                      //           onTap: () {},
+                      //           child: Container(
+                      //             decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(10),
+                      //               border: Border.all(
+                      //                 color: wintergreenDream,
+                      //                 width: 2,
+                      //               ),
+                      //             ),
+                      //             child: const Padding(
+                      //               padding: EdgeInsets.symmetric(
+                      //                 horizontal: 20,
+                      //                 vertical: 10,
+                      //               ),
+                      //               child: Row(
+                      //                 children: [
+                      //                   Icon(
+                      //                     Icons.search,
+                      //                     color: wintergreenDream,
+                      //                   ),
+                      //                   SizedBox(
+                      //                     width: 10,
+                      //                   ),
+                      //                   Text(
+                      //                     "Cari Surah",
+                      //                     style: blackBold12,
+                      //                   ),
+                      //                 ],
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
 
                       // section - bookmark
                       // ignore: unrelated_type_equality_checks

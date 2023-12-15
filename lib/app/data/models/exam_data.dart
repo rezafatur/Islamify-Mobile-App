@@ -33,22 +33,22 @@ class Level {
 List<Exam> examContents = [
   Exam(
     id: 1,
-    title: "Huruf Hijaiyah",
+    title: "Mengenal Huruf Hijaiyah",
     description:
-        "Menilai kemampuan dalam membaca huruf Hijaiyah dengan akurat dan lancar.",
+        "Menilai kemampuan dalam membaca dan mengenali huruf Hijaiyah dengan akurat dan lancar.",
     image: "assets/images/ujianQuran1.png",
     totalExam: 3,
     levels: [
       Level(
         tingkatan: "Pemula",
-        soal: "ا ب ت ث",
-        jawaban: "ا ب ت ث",
+        soal: "ا ب",
+        jawaban: "ا ب",
         progress: 0,
       ),
       Level(
         tingkatan: "Menengah",
-        soal: "ا ب ت ث",
-        jawaban: "ا ب ت ث",
+        soal: "ا ب ت",
+        jawaban: "ا ب ت",
         progress: 0,
       ),
       Level(

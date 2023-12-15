@@ -142,7 +142,7 @@ class LevelExamView extends GetView<LevelExamController> {
                                         style: blackW30012,
                                         children: [
                                           TextSpan(
-                                            text: "10000",
+                                            text: "250",
                                             style: blackBold12,
                                           )
                                         ],
