@@ -145,7 +145,7 @@ class ExamView extends GetView<ExamController> {
                           ),
                           child: const Padding(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 20,
+                              horizontal: 10,
                               vertical: 10,
                             ),
                             child: Stack(

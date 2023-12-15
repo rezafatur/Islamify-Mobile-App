@@ -24,6 +24,7 @@ class LoginView extends GetView<LoginController> {
       backgroundColor: cultured,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         systemOverlayStyle: const SystemUiOverlayStyle(
@@ -39,8 +40,9 @@ class LoginView extends GetView<LoginController> {
               height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  40,
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(40),
+                  bottomLeft: Radius.circular(40),
                 ),
                 boxShadow: [
                   BoxShadow(

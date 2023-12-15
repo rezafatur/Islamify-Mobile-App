@@ -21,18 +21,25 @@ class AllSurahView extends GetView<AllSurahController> {
     return Scaffold(
       backgroundColor: cultured,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: cultured,
         elevation: 5,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,
         ),
-        leading: const Center(
-          child: Text(
-            "Islamify",
-            style: winterDreamBold32,
+        leading: const Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Text(
+              "Islamify",
+              style: winterDreamBold24,
+            ),
           ),
         ),
-        leadingWidth: MediaQuery.of(context).size.width / 2.5,
+        leadingWidth: MediaQuery.of(context).size.width,
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(

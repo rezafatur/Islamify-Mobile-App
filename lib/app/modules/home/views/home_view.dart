@@ -29,18 +29,25 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: cultured,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: cultured,
         elevation: 5,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,
         ),
-        leading: const Center(
-          child: Text(
-            "Islamify",
-            style: winterDreamBold32,
+        leading: const Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Text(
+              "Islamify",
+              style: winterDreamBold24,
+            ),
           ),
         ),
-        leadingWidth: MediaQuery.of(context).size.width / 2.5,
+        leadingWidth: MediaQuery.of(context).size.width,
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -76,14 +83,14 @@ class HomeView extends GetView<HomeController> {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 2,
+                      flex: 6,
                       child: RichText(
                         text: TextSpan(
                           text: controller.getGreeting(),
                           style: blackW30018,
                           children: const [
                             TextSpan(
-                              text: "Dimas",
+                              text: "Dimas Jombang",
                               style: blackBold24,
                             )
                           ],
@@ -120,6 +127,25 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+
+              // section - ad banner
+              if (controller.bannerAd != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: SizedBox(
+                      width: controller.bannerAd!.size.width.toDouble(),
+                      height: controller.bannerAd!.size.height.toDouble(),
+                      child: AdWidget(ad: controller.bannerAd!),
+                    ),
+                  ),
+                ),
               const SizedBox(
                 height: 20,
               ),
@@ -358,25 +384,6 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-
-              // section - ad banner
-              if (controller.bannerAd != null)
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                  ),
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: SizedBox(
-                      width: controller.bannerAd!.size.width.toDouble(),
-                      height: controller.bannerAd!.size.height.toDouble(),
-                      child: AdWidget(ad: controller.bannerAd!),
-                    ),
-                  ),
-                ),
               const SizedBox(
                 height: 20,
               ),

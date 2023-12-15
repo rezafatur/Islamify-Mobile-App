@@ -176,6 +176,13 @@ const winterDreamBold20 = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const winterDreamBold24 = TextStyle(
+  color: wintergreenDream,
+  fontFamily: "Montserrat",
+  fontSize: 24,
+  fontWeight: FontWeight.bold,
+);
+
 const winterDreamBold32 = TextStyle(
   color: wintergreenDream,
   fontFamily: "Montserrat",

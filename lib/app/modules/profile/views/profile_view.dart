@@ -110,18 +110,25 @@ class ProfileView extends GetView<ProfileController> {
     return Scaffold(
       backgroundColor: cultured,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: cultured,
         elevation: 5,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,
         ),
-        leading: const Center(
-          child: Text(
-            "Islamify",
-            style: winterDreamBold32,
+        leading: const Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Text(
+              "Islamify",
+              style: winterDreamBold24,
+            ),
           ),
         ),
-        leadingWidth: MediaQuery.of(context).size.width / 2.5,
+        leadingWidth: MediaQuery.of(context).size.width,
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -164,10 +171,10 @@ class ProfileView extends GetView<ProfileController> {
                     child: Row(
                       children: [
                         Expanded(
-                          flex: 2,
+                          flex: 6,
                           child: RichText(
                             text: const TextSpan(
-                              text: "Dimas\n",
+                              text: "Dimas Jombang\n",
                               style: blackBold24,
                               children: [
                                 TextSpan(
@@ -272,7 +279,7 @@ class ProfileView extends GetView<ProfileController> {
                                   style: blackW30012,
                                   children: [
                                     TextSpan(
-                                      text: "10000",
+                                      text: "250",
                                       style: blackBold12,
                                     )
                                   ],
@@ -530,7 +537,7 @@ class ProfileView extends GetView<ProfileController> {
                                         child: Row(
                                           children: [
                                             Expanded(
-                                              flex: 1,
+                                              flex: 3,
                                               child: Text(
                                                 "Jenis Kelamin",
                                                 style: blackBold12,
@@ -541,7 +548,7 @@ class ProfileView extends GetView<ProfileController> {
                                               width: 10,
                                             ),
                                             Expanded(
-                                              flex: 2,
+                                              flex: 1,
                                               child: Text(
                                                 "Laki-laki",
                                                 style: blackW30012,
