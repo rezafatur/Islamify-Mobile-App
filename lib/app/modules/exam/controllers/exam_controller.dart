@@ -50,4 +50,18 @@ class ExamController extends GetxController {
     _speech.stop();
     // print("Berhenti mendengarkan");
   }
+
+  // method to update the progress when the answer is correct
+  void updateProgress() {
+    var content = contentsExam[0];
+    var level = content.levels[levelID];
+    if (recognizedText.value == level.jawaban) {
+      // if the answer is correct, update the progress
+      content.levels[levelID] = level.updateProgress();
+
+      // update the contentsAllExam list
+      contentsAllExam[examID - 1] = content;
+    }
+    // print(level.progress);
+  }
 }

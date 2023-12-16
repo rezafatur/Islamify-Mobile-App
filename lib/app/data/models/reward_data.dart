@@ -19,7 +19,7 @@ List<Reward> rewardContents = [
     title: "Al-Qur'an Mushaf Asli Madinah Ukuran Sedang A5",
     description: "Mushaf Al-Quran ini dicetak dengan rapi, bersih, dan jelas.",
     image: "assets/images/reward1.png",
-    coins: 10000,
+    coins: 1000,
     stock: 3,
   ),
   Reward(
@@ -27,7 +27,7 @@ List<Reward> rewardContents = [
     description:
         "Dapatkan sajadah yang nyaman dan berkualitas tinggi untuk meningkatkan kenyamanan ibadah Anda.",
     image: "assets/images/reward2.png",
-    coins: 7500,
+    coins: 750,
     stock: 50,
   ),
   Reward(
@@ -35,15 +35,15 @@ List<Reward> rewardContents = [
     description:
         "Membedah secara menyeluruh segala hal tentang Imam al-Bukhari, mulai dari riwayat hidupnya, mazhab yang dianutnya, karya-karyanya, spesialisasinya, dan nasihat-nasihatnya.",
     image: "assets/images/reward3.png",
-    coins: 6000,
+    coins: 600,
     stock: 20,
   ),
   Reward(
     title: "Buku Intisari Tafsir Al-Qur'an Rahasia Keagungan Ayat Pilihan",
     description:
         "Buku ini mengulas ayat-ayat penting dalam al-Qur'an yang bisa dikatakan mewakili ayat-ayat lainnya. Isinya disusun secara tematik agar memudahkan pembaca.",
-    image: "assets/images/reward1.png",
-    coins: 4800,
+    image: "assets/images/reward4.png",
+    coins: 250,
     stock: 2,
   ),
 ];

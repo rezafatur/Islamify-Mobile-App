@@ -14,6 +14,21 @@ class Exam {
     required this.totalExam,
     required this.levels,
   });
+
+  // method to update the progress
+  Exam updateLevelProgress(int levelIndex) {
+    List<Level> updatedLevels = List.from(levels);
+    updatedLevels[levelIndex] = levels[levelIndex].updateProgress();
+
+    return Exam(
+      id: id,
+      title: title,
+      description: description,
+      image: image,
+      totalExam: totalExam,
+      levels: updatedLevels,
+    );
+  }
 }
 
 class Level {
@@ -28,6 +43,16 @@ class Level {
     required this.jawaban,
     required this.progress,
   });
+
+  // method to update the progress
+  Level updateProgress() {
+    return Level(
+      tingkatan: tingkatan,
+      soal: soal,
+      jawaban: jawaban,
+      progress: 1,
+    );
+  }
 }
 
 List<Exam> examContents = [

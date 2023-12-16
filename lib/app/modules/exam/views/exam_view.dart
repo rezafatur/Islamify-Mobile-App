@@ -271,6 +271,9 @@ class ExamView extends GetView<ExamController> {
                         String correctAnswer = level.jawaban;
 
                         if (controller.recognizedText.value == correctAnswer) {
+                          // if answer is correct, then update progress and show pop-up
+                          controller.updateProgress();
+
                           // if answer is correct, then show pop-up
                           WidgetsBinding.instance.addPostFrameCallback(
                             (_) {
