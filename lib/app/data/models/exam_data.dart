@@ -35,12 +35,14 @@ class Level {
   final String tingkatan;
   final String soal;
   final String jawaban;
+  final String audio;
   final double progress;
 
   Level({
     required this.tingkatan,
     required this.soal,
     required this.jawaban,
+    required this.audio,
     required this.progress,
   });
 
@@ -50,6 +52,7 @@ class Level {
       tingkatan: tingkatan,
       soal: soal,
       jawaban: jawaban,
+      audio: audio,
       progress: 1,
     );
   }
@@ -68,18 +71,21 @@ List<Exam> examContents = [
         tingkatan: "Pemula",
         soal: "ا ب",
         jawaban: "ا ب",
+        audio: "audio/exam1_part1.mp3",
         progress: 0,
       ),
       Level(
         tingkatan: "Menengah",
         soal: "ا ب ت",
         jawaban: "ا ب ت",
+        audio: "audio/exam1_part2.mp3",
         progress: 0,
       ),
       Level(
         tingkatan: "Mahir",
         soal: "ا ب ت ث",
         jawaban: "ا ب ت ث",
+        audio: "audio/exam1_part3.mp3",
         progress: 0,
       ),
     ],
@@ -94,20 +100,23 @@ List<Exam> examContents = [
     levels: [
       Level(
         tingkatan: "Pemula",
-        soal: "ا ب ت ث",
-        jawaban: "ا ب ت ث",
+        soal: "ا ب",
+        jawaban: "ا ب",
+        audio: "audio/exam1_part1.mp3",
         progress: 0,
       ),
       Level(
         tingkatan: "Menengah",
-        soal: "ا ب ت ث",
-        jawaban: "ا ب ت ث",
+        soal: "ا ب ت",
+        jawaban: "ا ب ت",
+        audio: "audio/exam1_part2.mp3",
         progress: 0,
       ),
       Level(
         tingkatan: "Mahir",
         soal: "ا ب ت ث",
         jawaban: "ا ب ت ث",
+        audio: "audio/exam1_part3.mp3",
         progress: 0,
       ),
     ],

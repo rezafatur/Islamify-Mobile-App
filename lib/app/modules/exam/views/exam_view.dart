@@ -178,27 +178,34 @@ class ExamView extends GetView<ExamController> {
                       // section - audio
                       Expanded(
                         flex: 1,
-                        child: SizedBox(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: opal,
-                                width: 2,
+                        child: InkWell(
+                          onTap: () {
+                            controller.togglePlayPause(
+                              level.audio,
+                            );
+                          },
+                          child: SizedBox(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: opal,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(20),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.volume_up,
-                                    size: 30,
-                                    color: pictonBlue,
-                                  ),
-                                ],
+                              child: const Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.volume_up,
+                                      size: 30,
+                                      color: pictonBlue,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

@@ -94,7 +94,7 @@ class QuranController extends GetxController {
   void checkBookmarkStatus() {
     final bookmarkedID = storage.read<int>("bookmark");
     isBookmarked.value = surahID == bookmarkedID;
-    print(bookmarkedID);
+    // print(bookmarkedID);
   }
 
   @override
